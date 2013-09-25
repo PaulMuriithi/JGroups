@@ -2246,7 +2246,7 @@ public class Util {
             sb.append(el);
             if(limit > 0 && ++count >= limit) {
                 if(size > count)
-                    sb.append(" ...").append(list.size()).append("...");
+                    sb.append(" ..."); // .append(list.size()).append("...");
                 break;
             }
         }
@@ -2265,7 +2265,7 @@ public class Util {
             sb.append(el);
             if(limit > 0 && ++count >= limit) {
                 if(size > count)
-                    sb.append(" ...").append(list.length).append("...");
+                    sb.append(" ..."); // .append(list.length).append("...");
                 break;
             }
         }
@@ -4536,7 +4536,7 @@ public class Util {
         if(index >= 0) {
             var=s.substring(0, index);
             default_val=s.substring(index+1);
-            if(default_val != null && default_val.length() > 0)
+            if(default_val != null && !default_val.isEmpty())
                 default_val=default_val.trim();
             // retval=System.getProperty(var, default_val);
             retval=_getProperty(var, default_val);
