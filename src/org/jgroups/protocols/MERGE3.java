@@ -436,6 +436,7 @@ public class MERGE3 extends Protocol {
             for(Map.Entry<Address,View> entry: results.entrySet())
                 if(entry.getValue() != null)
                     merge_views.put(entry.getKey(), entry.getValue());
+            view_rsps.reset();
 
             if(merge_views.size() >= 2) {
                 up_prot.up(new Event(Event.MERGE, merge_views));
