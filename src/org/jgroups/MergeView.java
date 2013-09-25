@@ -77,7 +77,7 @@ public class MergeView extends View {
         StringBuilder sb=new StringBuilder();
         sb.append("MergeView::").append(super.toString());
         if(subgroups != null && subgroups.length > 0) {
-            sb.append(", subgroups=");
+            sb.append(", ").append(subgroups.length).append(" subgroups: ");
             sb.append(Util.printListWithDelimiter(subgroups, ", ", Util.MAX_LIST_PRINT_SIZE));
         }
         return sb.toString();
