@@ -2232,7 +2232,7 @@ public class Util {
             sb.append(el);
             if(limit > 0 && ++count >= limit) {
                 if(size > count)
-                    sb.append(" ...");
+                    sb.append(" ...").append(list.size()).append("...");
                 break;
             }
         }
@@ -2251,7 +2251,7 @@ public class Util {
             sb.append(el);
             if(limit > 0 && ++count >= limit) {
                 if(size > count)
-                    sb.append(" ...");
+                    sb.append(" ...").append(list.length).append("...");
                 break;
             }
         }
