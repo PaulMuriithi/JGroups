@@ -2138,6 +2138,20 @@ public class Util {
         return 1;
     }
 
+    /** Returns true if all elements in the collection are the same */
+    public static <T> boolean allEqual(Collection<T> elements) {
+        if(elements.isEmpty())
+            return false;
+        Iterator<T> it=elements.iterator();
+        T first=it.next();
+        while(it.hasNext()) {
+            T el=it.next();
+            if(!el.equals(first))
+                return false;
+        }
+        return true;
+    }
+
     public static byte size(long number) {
         return (byte)(number == 0? 1 : numberOfBytesRequiredForLong(number) +1);
     }

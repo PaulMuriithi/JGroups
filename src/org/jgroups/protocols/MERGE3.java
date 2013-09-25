@@ -439,6 +439,13 @@ public class MERGE3 extends Protocol {
             view_rsps.reset();
 
             if(merge_views.size() >= 2) {
+                Collection<View> tmp_views=merge_views.values();
+                if(Util.allEqual(tmp_views)) {
+                    log.trace("%s: all views are the same, suppressing sending MERGE up. Views: %s",
+                              local_addr, tmp_views);
+                    return;
+                }
+
                 up_prot.up(new Event(Event.MERGE, merge_views));
                 num_merge_events++;
             }
